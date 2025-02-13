@@ -151,3 +151,59 @@ header {
         margin-left: 0;
     }
 }
+/* 投稿フォーム */
+.post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* ユーザー情報 */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* ユーザーアイコン */
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* ユーザー名 */
+.username {
+    font-weight: bold;
+    color: #1da1f2;
+}
+
+/* テキストエリア */
+textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    resize: none;
+    text-align: center; /* テキストを中央寄せ */
+    vertical-align: top; /* 上寄せ */
+}
+
+/* 投稿ボタン */
+button {
+    background-color: #1da1f2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #007bb5;
+}
