@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".tab-link");
     const tabContents = document.querySelectorAll(".tab-content");
 
+    // ローカルストレージから投稿内容を読み込む
+    loadPosts();
+
     // 投稿機能
     postButton.addEventListener("click", function () {
         let text = postText.value.trim();
@@ -13,6 +16,38 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // 新しい投稿を作成
+        let post = createPost(text);
+        
+        // 投稿をローカルストレージに保存
+        savePost(text);
+
+        // 投稿をリストに追加
+        postList.insertBefore(post, postList.firstChild);
+
+        postText.value = "";
+    });
+
+    // タブ切り替え機能
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // すべてのタブのアクティブクラスを削除
+            tabs.forEach(t => t.classList.remove("active"));
+            tabContents.forEach(content => content.classList.remove("active"));
+
+            // クリックされたタブにアクティブクラスを追加
+            tab.classList.add("active");
+
+            // 対応するコンテンツを表示
+            const tabId = tab.getAttribute("data-tab");
+            document.getElementById(tabId).classList.add("active");
+        });
+    });
+
+    // 投稿を作成する関数
+    function createPost(text) {
         let post = document.createElement("article");
         post.classList.add("post");
 
@@ -44,26 +79,24 @@ document.addEventListener("DOMContentLoaded", function () {
         post.appendChild(userInfo);
         post.appendChild(postContent);
 
-        postList.insertBefore(post, postList.firstChild);
+        return post;
+    }
 
-        postText.value = "";
-    });
+    // ローカルストレージから保存されている投稿を読み込む関数
+    function loadPosts() {
+        let savedPosts = JSON.parse(localStorage.getItem("posts"));
+        if (savedPosts) {
+            savedPosts.forEach(text => {
+                let post = createPost(text);
+                postList.appendChild(post);
+            });
+        }
+    }
 
-    // タブ切り替え機能
-    tabs.forEach(tab => {
-        tab.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            // すべてのタブのアクティブクラスを削除
-            tabs.forEach(t => t.classList.remove("active"));
-            tabContents.forEach(content => content.classList.remove("active"));
-
-            // クリックされたタブにアクティブクラスを追加
-            tab.classList.add("active");
-
-            // 対応するコンテンツを表示
-            const tabId = tab.getAttribute("data-tab");
-            document.getElementById(tabId).classList.add("active");
-        });
-    });
+    // 投稿をローカルストレージに保存する関数
+    function savePost(text) {
+        let savedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+        savedPosts.push(text);
+        localStorage.setItem("posts", JSON.stringify(savedPosts));
+    }
 });
