@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>推しSNS</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,29 +16,47 @@
 
     <!-- メインコンテンツ -->
     <main>
-        <!-- 投稿フォーム -->
-        <section class="post-form">
-            <textarea placeholder="推しへの想いを語ろう！"></textarea>
-            <button>投稿</button>
-        </section>
+        <section class="container">
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">トレンド</a></li>
+                    <li><a href="#">通知</a></li>
+                    <li><a href="#">プロフィール</a></li>
+                </ul>
+            </nav>
 
-        <!-- 投稿リスト -->
-        <section class="posts">
-            <article class="post">
-                <div class="user-info">
-                    <img src="user1.jpg" alt="User Icon">
-                    <span>@oshi_love</span>
+            <section class="content">
+                <div class="post-form">
+                    <img src="user_icon.jpg" alt="User Icon" class="user-icon">
+                    <textarea placeholder="推しへの想いを語ろう！"></textarea>
+                    <button>投稿</button>
                 </div>
-                <p>今日も推しが最高でした…尊い…</p>
-            </article>
 
-            <article class="post">
-                <div class="user-info">
-                    <img src="user2.jpg" alt="User Icon">
-                    <span>@idol_fan</span>
-                </div>
-                <p>推しの新曲が神すぎる！！！</p>
-            </article>
+                <section class="posts">
+                    <article class="post">
+                        <div class="user-info">
+                            <img src="user1.jpg" alt="User Icon">
+                            <div>
+                                <span class="username">@oshi_love</span>
+                                <span class="timestamp">・1時間前</span>
+                            </div>
+                        </div>
+                        <p>今日も推しが最高でした…尊い…</p>
+                    </article>
+
+                    <article class="post">
+                        <div class="user-info">
+                            <img src="user2.jpg" alt="User Icon">
+                            <div>
+                                <span class="username">@idol_fan</span>
+                                <span class="timestamp">・2時間前</span>
+                            </div>
+                        </div>
+                        <p>推しの新曲が神すぎる！！！</p>
+                    </article>
+                </section>
+            </section>
         </section>
     </main>
 
