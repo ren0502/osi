@@ -135,3 +135,34 @@ button:hover {
 .post p {
     text-align: center;
 }
+/* ユーザー名 */
+.username {
+    font-weight: bold;
+    color: #1da1f2;
+    font-size: 1.1em; /* 文字サイズを少し大きく */
+}
+
+/* テキストエリア */
+textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    resize: none;
+    text-align: center;
+    font-size: 1.2em; /* 文字サイズを少し大きく */
+}
+
+/* 投稿内容 */
+.post p {
+    margin: 0;
+    font-size: 1.3em; /* 投稿の文字サイズを少し大きく */
+    line-height: 1.6;
+}
+
+/* サイドバーのメニュー */
+.sidebar ul li a {
+    font-size: 1.2em; /* サイドメニューの文字サイズを少し大きく */
+}
