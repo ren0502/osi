@@ -1,0 +1,94 @@
+/* ベーススタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* 投稿フォーム */
+.post-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.post-form textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1em;
+}
+
+.post-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.post-form button:hover {
+    background-color: #ff1493;
+}
+
+/* 投稿一覧 */
+.posts {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.post {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info span {
+    font-weight: bold;
+    color: #ff1493;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .post-form, .posts {
+        max-width: 90%;
+    }
+}
